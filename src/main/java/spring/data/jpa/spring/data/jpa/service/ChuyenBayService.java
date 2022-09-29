@@ -8,4 +8,5 @@ import spring.data.jpa.spring.data.jpa.entity.ChuyenBay;
 
 public interface ChuyenBayService {
 	public List<ChuyenBay> getChuyenBayByGaDe(String GaDen);
+	public List<ChuyenBay> getChuyenBayByDoDaiFromTo(int From, int To);
 }

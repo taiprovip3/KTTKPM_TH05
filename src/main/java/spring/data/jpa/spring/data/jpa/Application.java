@@ -34,6 +34,9 @@ public class Application {
 		
 		List<NhanVien> ls3 = nhanVienService.getNhanVienByLuong(10000);
 		System.out.println("\nCâu 3) Danh sách các nhân viên lương < 10.000:\n"+ ls3 +"\n");
+		
+		List<ChuyenBay> ls4 = chuyenBayService.getChuyenBayByDoDaiFromTo(8000, 10000);
+		System.out.println("\nCâu 4) Danh sách các nhân viên lương < 10.000:\n"+ ls4 +"\n");
 	}
 
 }

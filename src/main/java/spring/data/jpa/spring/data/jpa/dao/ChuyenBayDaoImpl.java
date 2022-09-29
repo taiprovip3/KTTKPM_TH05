@@ -22,4 +22,9 @@ public class ChuyenBayDaoImpl implements ChuyenBayService{
 	public List<ChuyenBay> getChuyenBayByGaDe(String GaDen) {
 		return chuyenBayRepository.getChuyenBayByGaDen(GaDen);
 	}
+
+	@Override
+	public List<ChuyenBay> getChuyenBayByDoDaiFromTo(int From, int To) {
+		return chuyenBayRepository.getChuyenBayByDoDaiFromTo(From, To);
+	}
 }
