@@ -10,9 +10,11 @@ import org.springframework.context.ApplicationContext;
 import spring.data.jpa.spring.data.jpa.dao.ChuyenBayDaoImpl;
 import spring.data.jpa.spring.data.jpa.entity.ChuyenBay;
 import spring.data.jpa.spring.data.jpa.entity.MayBay;
+import spring.data.jpa.spring.data.jpa.entity.NhanVien;
 import spring.data.jpa.spring.data.jpa.repository.ChuyenBayRepository;
 import spring.data.jpa.spring.data.jpa.service.ChuyenBayService;
 import spring.data.jpa.spring.data.jpa.service.MayBayService;
+import spring.data.jpa.spring.data.jpa.service.NhanVienService;
 
 @SpringBootApplication
 public class Application {
@@ -22,12 +24,16 @@ public class Application {
 		
 		ChuyenBayService chuyenBayService = context.getBean(ChuyenBayService.class);
 		MayBayService mayBayService = context.getBean(MayBayService.class);
+		NhanVienService nhanVienService = context.getBean(NhanVienService.class);
 		
 		List<ChuyenBay> ls = chuyenBayService.getChuyenBayByGaDe("DAD");
 		System.out.println("\nCâu 1) Danh sách các chuyến bay đi Đà Lạt:\n"+ ls +"\n");
 		
 		List<String> ls2 = mayBayService.getMayBayByTamBay(10000); 
 		System.out.println("\nCâu 2) Danh sách loại máy bay có tầm bay > 10.000 km:\n"+ ls2 +"\n");
+		
+		List<NhanVien> ls3 = nhanVienService.getNhanVienByLuong(10000);
+		System.out.println("\nCâu 3) Danh sách các nhân viên lương < 10.000:\n"+ ls3 +"\n");
 	}
 
 }
