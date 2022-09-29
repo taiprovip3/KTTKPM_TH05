@@ -10,4 +10,6 @@ public interface NhanVienService {
 	public int getTotalLuong();
 //	Câu 9 Cho biết mã số của các phi công lái máy báy Boeing.
 	public List<String> getPhiCongBoeing();
+//	Câu 10 Cho biết các nhân viên có thể lái máy bay có mã số 747
+	public List<NhanVien> getNhanVienHaveMaMB747();
 }

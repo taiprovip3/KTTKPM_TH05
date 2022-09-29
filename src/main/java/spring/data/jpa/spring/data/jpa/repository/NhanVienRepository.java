@@ -15,4 +15,7 @@ public interface NhanVienRepository extends JpaRepository<NhanVien, String>{
 	
 	@Query(value = "select nv.manv from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.loai like 'Boeing%'", nativeQuery = true)
 	public List<String> getPhiCongBoeing();
+	
+	@Query(value = "select nv.* from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.mamb = '747';", nativeQuery = true)
+	public List<NhanVien> getNhanVienHaveMaMB747();
 }

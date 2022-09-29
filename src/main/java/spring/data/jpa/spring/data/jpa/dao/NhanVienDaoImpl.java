@@ -33,5 +33,10 @@ public class NhanVienDaoImpl implements NhanVienService{
 	public List<String> getPhiCongBoeing() {
 		return nhanVienRepository.getPhiCongBoeing();
 	}
+
+	@Override
+	public List<NhanVien> getNhanVienHaveMaMB747() {
+		return nhanVienRepository.getNhanVienHaveMaMB747();
+	}
 	
 }

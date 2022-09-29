@@ -38,8 +38,11 @@ public class Application {
 		List<ChuyenBay> ls4 = chuyenBayService.getChuyenBayByDoDaiFromTo(8000, 10000);
 		System.out.println("\nCâu 4) Danh sách các nhân viên lương < 10.000:\n"+ ls4 +"\n");
 		
-		List<String> ls5 = nhanVienService.getPhiCongBoeing();
-		System.out.println("\n Câu 5) Danh sách Mã phi công lái máy bay loại Boeing (khó):\n"+ ls5 + "\n");
+		List<String> ls9 = nhanVienService.getPhiCongBoeing();
+		System.out.println("\n Câu 9) Danh sách Mã phi công lái máy bay loại Boeing (khó):\n"+ ls9 + "\n");
+		
+		List<NhanVien> ls10 = nhanVienService.getNhanVienHaveMaMB747();
+		System.out.println("\n Câu 10) Danh sách nhân lái máy bay loại mã 747:\n"+ ls10 + "\n");
 	}
 
 }
