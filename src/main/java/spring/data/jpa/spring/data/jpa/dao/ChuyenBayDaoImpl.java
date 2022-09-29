@@ -27,4 +27,16 @@ public class ChuyenBayDaoImpl implements ChuyenBayService{
 	public List<ChuyenBay> getChuyenBayByDoDaiFromTo(int From, int To) {
 		return chuyenBayRepository.getChuyenBayByDoDaiFromTo(From, To);
 	}
+
+	@Override
+	public List<ChuyenBay> getChuyenByFromTo(String GaDi, String GaDen) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ChuyenBay> getChuyenBayFrom(String GaDi) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

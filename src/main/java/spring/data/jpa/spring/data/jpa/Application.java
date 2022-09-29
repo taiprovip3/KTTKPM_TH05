@@ -37,6 +37,9 @@ public class Application {
 		
 		List<ChuyenBay> ls4 = chuyenBayService.getChuyenBayByDoDaiFromTo(8000, 10000);
 		System.out.println("\nCâu 4) Danh sách các nhân viên lương < 10.000:\n"+ ls4 +"\n");
+		
+		List<String> ls5 = nhanVienService.getPhiCongBoeing();
+		System.out.println("\n Câu 5) Danh sách Mã phi công lái máy bay loại Boeing (khó):\n"+ ls5 + "\n");
 	}
 
 }

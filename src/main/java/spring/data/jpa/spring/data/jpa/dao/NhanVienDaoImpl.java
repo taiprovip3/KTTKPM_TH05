@@ -22,5 +22,16 @@ public class NhanVienDaoImpl implements NhanVienService{
 	public List<NhanVien> getNhanVienByLuong(int Luong) {
 		return nhanVienRepository.getNhanVienByLuong(Luong);
 	}
+
+	@Override
+	public int getTotalLuong() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<String> getPhiCongBoeing() {
+		return nhanVienRepository.getPhiCongBoeing();
+	}
 	
 }

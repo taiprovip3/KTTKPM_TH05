@@ -22,6 +22,12 @@ public class MayBayDaoImpl implements MayBayService{
 	public List<String> getMayBayByTamBay(int TamBay) {
 		return mayBayRepository.getMayBayByTamBay(TamBay);
 	}
+
+	@Override
+	public int getCountBoeing() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 }

@@ -12,4 +12,7 @@ import spring.data.jpa.spring.data.jpa.entity.NhanVien;
 public interface NhanVienRepository extends JpaRepository<NhanVien, String>{
 	@Query("select nv from NhanVien nv where nv.Luong < 10000")
 	public List<NhanVien> getNhanVienByLuong(int Luong);
+	
+	@Query(value = "select nv.manv from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.loai like 'Boeing%'", nativeQuery = true)
+	public List<String> getPhiCongBoeing();
 }
