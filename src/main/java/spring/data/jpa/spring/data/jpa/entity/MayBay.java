@@ -39,4 +39,9 @@ public class MayBay {
 		Loai = loai;
 		TamBay = tamBay;
 	}
+	
+	@Override
+	public String toString() {
+		return "MayBay [MaMB=" + MaMB + ", Loai=" + Loai + ", TamBay=" + TamBay + "]";
+	}
 }

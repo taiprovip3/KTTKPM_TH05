@@ -20,7 +20,7 @@ public class NhanVien {
 	private String Ten;
 	private int Luong;
 	//Ta nên xem 2 bảng có thuộc tính gì và có mối liên hệ gì rồi phân tích. Do một NhanVien có nhiều ChungNhan. Trong ChungNhan có: {MaCN, MaNV, MaMB}. One:NhanVien Many:ChungNhan. Map @annotation ở cả 2 lớp. Phía @One.. thì sài list phía @Many... sài Object
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "nhanVien")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "nhanVien")
 	private Set<ChungNhan> chungNhans = new HashSet<>();
 	
 //	@ManyToOne
@@ -55,5 +55,8 @@ public class NhanVien {
 		Luong = luong;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "NhanVien [MaNV=" + MaNV + ", Ten=" + Ten + ", Luong=" + Luong + ", chungNhans=" + chungNhans + "]";
+	}
 }

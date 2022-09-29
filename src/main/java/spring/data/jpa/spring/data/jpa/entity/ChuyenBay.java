@@ -92,6 +92,8 @@ public class ChuyenBay {
 	public void setChiPhi(int chiPhi) {
 		ChiPhi = chiPhi;
 	}
+	
+
 	public ChuyenBay() {
 		super();
 	}
@@ -104,5 +106,12 @@ public class ChuyenBay {
 		GioDi = gioDi;
 		GioDen = gioDen;
 		ChiPhi = chiPhi;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "ChuyenBay [MaCB=" + MaCB + ", GaDi=" + GaDi + ", GaDen=" + GaDen + ", DoDai=" + DoDai + ", GioDi="
+				+ GioDi + ", GioDen=" + GioDen + ", ChiPhi=" + ChiPhi + ", MaMayBay=" + mayBay.getMaMB()+"]";
 	}
 }
