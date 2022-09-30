@@ -6,6 +6,9 @@ select * from maybay;
 select * from nhanvien;
 select * from chungnhan;
 
+select nv.manv from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.loai like 'Boeing%';
+select nv.* from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.mamb = '747';
+
 
 insert into maybay values ('154','Boeing 777 - 300','10306');
 INSERT INTO maybay (mamb, loai, tam_bay) VALUES ('319', 'Airbus A319', '2888');

@@ -1,12 +1,19 @@
 package spring.data.jpa.spring.data.jpa.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import spring.data.jpa.spring.data.jpa.entity.ChungNhan;
+import spring.data.jpa.spring.data.jpa.entity.MayBay;
+import spring.data.jpa.spring.data.jpa.repository.ChungNhanRepository;
 import spring.data.jpa.spring.data.jpa.repository.MayBayRepository;
 import spring.data.jpa.spring.data.jpa.service.MayBayService;
 
@@ -16,6 +23,9 @@ public class MayBayDaoImpl implements MayBayService{
 	
 	@Autowired
 	private MayBayRepository mayBayRepository;
+	
+	@Autowired
+	private ChungNhanRepository chungNhanRepository;
 
 	@Transactional
 	@Override
@@ -25,9 +35,21 @@ public class MayBayDaoImpl implements MayBayService{
 
 	@Override
 	public int getCountBoeing() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub dễ quá khỏi làm
 		return 0;
 	}
-	
-	
+
+	@Transactional
+	@Override
+	public Map<Integer, Object[]> getCau16() {
+		//Lấy danh sách MaMB có người lái từ ChungNhan
+		List<Object[]> danhSachMayBayCoNguoiLai = chungNhanRepository.getAllMayBayCoNguoiLai();
+		Map<Integer, Object[]> maps = new HashMap<>();
+				for (Object[] obj : danhSachMayBayCoNguoiLai) {
+					maps.put((Integer) obj[0], new Object[] { obj[1].toString(), (Integer) obj[2] });
+				}
+				
+		//Return: Map các cặp key value
+		return maps;
+	}
 }
