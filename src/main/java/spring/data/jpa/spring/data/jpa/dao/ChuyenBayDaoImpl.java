@@ -39,4 +39,10 @@ public class ChuyenBayDaoImpl implements ChuyenBayService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Transactional
+	@Override
+	public List<ChuyenBay> cau17(String GaDi, String GaDen) {
+		return chuyenBayRepository.cau17(GaDi, GaDen);
+	}
 }

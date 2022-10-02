@@ -1,15 +1,16 @@
+--select * from chuyenbay;
+--select * from maybay;
+--select * from nhanvien;
+--select * from chungnhan;
+select * from chuyenbay where ga_di = 'SGN' and ga_den = 'DAD' and ga_di = 'DAD' and ga_den = 'SGN';
+
+--select nv.manv from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.loai like 'Boeing%';
+--select nv.* from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.mamb = '747';
+
 create database QLCB;
 go
 use QLCB;
-select * from chuyenbay;
-select * from maybay;
-select * from nhanvien;
-select * from chungnhan;
-
-select nv.manv from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.loai like 'Boeing%';
-select nv.* from nhanvien nv join chungnhan cn on nv.manv = cn.manv join maybay mb on cn.mamb = mb.mamb where mb.mamb = '747';
-
-
+go
 insert into maybay values ('154','Boeing 777 - 300','10306');
 INSERT INTO maybay (mamb, loai, tam_bay) VALUES ('319', 'Airbus A319', '2888');
 INSERT INTO maybay (mamb, loai, tam_bay) VALUES ('320', 'Airbus A320', '4168');
@@ -21,23 +22,23 @@ INSERT INTO maybay (mamb, loai, tam_bay) VALUES ('757', 'Boeing 757 - 300', '641
 INSERT INTO maybay (mamb, loai, tam_bay) VALUES ('767', 'Boeing 767 - 400ER', '10360');
 INSERT INTO maybay (mamb, loai, tam_bay) VALUES ('777', 'Boeing 777 - 300', '10306');
 insert into chuyenbay values ('VN216','262','4170','DAD','SGN','14:20:00', '10:30:00', '154');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN254', 'SGN', 'HUI', '8765', '18:40:00', '20:00:00', '781');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN269', 'HAN', 'CXR', '1262', '14:10:00', '15:50:00', '202');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN276', 'DAD', 'CXR', '1283', '09:00:00', '12:00:00', '203');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN280', 'SGN', 'HPH', '11979', '06:00:00', '08:00:00', '1279');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN315', 'HAN', 'DAD', '134', '11:45:00', '13:00:00', '112');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN317', 'HAN', 'UIH', '827', '15:00:00', '16:15:00', '190');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN320', 'SGN', 'DAD', '2798', '06:00:00', '07:10:00', '221');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN338', 'SGN', 'BMV', '4081', '15:25:00', '16:25:00', '375');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN374', 'HAN', 'VII', '510', '11:40:00', '13:25:00', '120');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN375', 'VII', 'CXR', '752', '14:15:00', '16:00:00', '181');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN431', 'SGN', 'CAH', '3693', '05:55:00', '06:55:00', '236');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN440', 'SGN', 'BMV', '4081', '18:30:00', '19:30:00', '426');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN464', 'SGN', 'DLI', '2002', '07:20:00', '08:05:00', '225');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN474', 'PXU', 'PQC', '1586', '08:40:00', '11:20:00', '102');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN476', 'UIH', 'PQC', '485', '09:15:00', '11:50:00', '117');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN651', 'DAD', 'SGN', '2798', '19:30:00', '08:00:00', '221');
-INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN741', 'HAN', 'PXU', '395', '06:30:00', '08:30:00', '120');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi, mamb) VALUES ('VN254', 'SGN', 'HUI', '8765', '18:40:00', '20:00:00', '781','319');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN269', 'HAN', 'CXR', '1262', '14:10:00', '15:50:00', '202','320');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN276', 'DAD', 'CXR', '1283', '09:00:00', '12:00:00', '203','340');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN280', 'SGN', 'HPH', '11979', '06:00:00', '08:00:00', '1279','727');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN315', 'HAN', 'DAD', '134', '11:45:00', '13:00:00', '112','737');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN317', 'HAN', 'UIH', '827', '15:00:00', '16:15:00', '190','747');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN320', 'SGN', 'DAD', '2798', '06:00:00', '07:10:00', '221','757');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN338', 'SGN', 'BMV', '4081', '15:25:00', '16:25:00', '375','767');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN374', 'HAN', 'VII', '510', '11:40:00', '13:25:00', '120','777');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN375', 'VII', 'CXR', '752', '14:15:00', '16:00:00', '181','777');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN431', 'SGN', 'CAH', '3693', '05:55:00', '06:55:00', '236','777');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN440', 'SGN', 'BMV', '4081', '18:30:00', '19:30:00', '426','777');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN464', 'SGN', 'DLI', '2002', '07:20:00', '08:05:00', '225','777');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN474', 'PXU', 'PQC', '1586', '08:40:00', '11:20:00', '102','777');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN476', 'UIH', 'PQC', '485', '09:15:00', '11:50:00', '117','777');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN651', 'DAD', 'SGN', '2798', '19:30:00', '08:00:00', '221','777');
+INSERT INTO chuyenbay (macb, ga_di, ga_den, do_dai, gio_di, gio_den, chi_phi) VALUES ('VN741', 'HAN', 'PXU', '395', '06:30:00', '08:30:00', '120','777');
 insert into nhanvien values ('011564812', '153972', 'Ton Van Quy');
 INSERT INTO nhanvien (manv, ten, luong) VALUES ('141582651', 'Doan Thi Mai', '178345');
 INSERT INTO nhanvien (manv, ten, luong) VALUES ('142519864', 'Nguyen Thi Xuan Dao', '227489');

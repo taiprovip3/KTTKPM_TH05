@@ -16,4 +16,7 @@ public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String>{
 	
 	@Query("select cb from ChuyenBay cb where cb.DoDai >= ?1 and cb.DoDai <= ?2")
 	public List<ChuyenBay> getChuyenBayByDoDaiFromTo(int From, int To);
+	
+	@Query("SELECT cb FROM ChuyenBay cb WHERE cb.GaDi = ?1 AND cb.GaDen = ?2 OR cb.GaDi = ?2 and cb.GaDen = ?1")
+	public List<ChuyenBay> cau17(String GaDi, String GaDen);
 }

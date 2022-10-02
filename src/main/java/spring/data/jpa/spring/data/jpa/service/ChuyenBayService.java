@@ -13,4 +13,6 @@ public interface ChuyenBayService {
 	public List<ChuyenBay> getChuyenByFromTo(String GaDi, String GaDen);
 //  Câu 6 Có bao nhiêu chuyến bay xuất phát từ Sài Gòn (SGN)
 	public List<ChuyenBay> getChuyenBayFrom(String GaDi);
+//	Câu 17 Giả sử một hành khách muốn đi thẳng từ ga A đến ga B rồi quay trở về ga A. Cho biết các đường bay nào có thể đáp ứng yêu cầu này
+	public List<ChuyenBay> cau17(String GaDi, String GaDen);
 }
