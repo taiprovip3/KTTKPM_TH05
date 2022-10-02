@@ -1,6 +1,7 @@
 package spring.data.jpa.spring.data.jpa.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,11 @@ public class RestController {
 	@GetMapping("/cau17")
 	public List<ChuyenBay> cau17(){
 		return chuyenBayService.cau17("SGN", "DAD");
+	}
+	
+	@GetMapping("/cau18")
+	public Map<String, Integer> cau18(){
+		return chuyenBayService.cau18();
 	}
 	
 	@GetMapping("/hello")

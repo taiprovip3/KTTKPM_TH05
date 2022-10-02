@@ -1,6 +1,8 @@
 package spring.data.jpa.spring.data.jpa.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -44,5 +46,16 @@ public class ChuyenBayDaoImpl implements ChuyenBayService{
 	@Override
 	public List<ChuyenBay> cau17(String GaDi, String GaDen) {
 		return chuyenBayRepository.cau17(GaDi, GaDen);
+	}
+
+	@Transactional
+	@Override
+	public Map<String, Integer> cau18() {
+		List<Object[]> danhSachGaVaTongSoChuyenBayCuaGaDo = chuyenBayRepository.cau18();
+		Map<String, Integer> maps = new HashMap<>();
+		for (Object[] obj : danhSachGaVaTongSoChuyenBayCuaGaDo) {
+			maps.put(obj[0].toString(), (Integer) obj[1]);
+		}
+		return maps;
 	}
 }
