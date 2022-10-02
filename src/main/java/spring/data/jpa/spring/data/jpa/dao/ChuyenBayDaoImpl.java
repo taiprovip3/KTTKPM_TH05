@@ -1,5 +1,7 @@
 package spring.data.jpa.spring.data.jpa.dao;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,11 +52,11 @@ public class ChuyenBayDaoImpl implements ChuyenBayService{
 
 	@Transactional
 	@Override
-	public Map<String, Integer> cau18() {
+	public Map<String, Long> cau18() {
 		List<Object[]> danhSachGaVaTongSoChuyenBayCuaGaDo = chuyenBayRepository.cau18();
-		Map<String, Integer> maps = new HashMap<>();
+		Map<String, Long> maps = new HashMap<>();
 		for (Object[] obj : danhSachGaVaTongSoChuyenBayCuaGaDo) {
-			maps.put(obj[0].toString(), (Integer) obj[1]);
+			maps.put(obj[0].toString(), Long.parseLong(String.valueOf(obj[1])));
 		}
 		return maps;
 	}

@@ -26,7 +26,7 @@ public class RestController {
 	}
 	
 	@GetMapping("/cau18")
-	public Map<String, Integer> cau18(){
+	public Map<String, Long> cau18(){
 		return chuyenBayService.cau18();
 	}
 	

@@ -17,5 +17,5 @@ public interface ChuyenBayService {
 //	Câu 17 Giả sử một hành khách muốn đi thẳng từ ga A đến ga B rồi quay trở về ga A. Cho biết các đường bay nào có thể đáp ứng yêu cầu này
 	public List<ChuyenBay> cau17(String GaDi, String GaDen);
 //	Câu 18 Với mỗi ga có chuyến bay xuất phát từ đó cho biết có bao nhiêu chuyến bay khởi hành từ ga đó.
-	public Map<String, Integer> cau18();
+	public Map<String, Long> cau18();
 }
