@@ -45,9 +45,9 @@ public class Application {
 		List<NhanVien> ls10 = nhanVienService.getNhanVienHaveMaMB747();
 		System.out.println("\n Câu 10) Danh sách nhân lái máy bay loại mã 747:\n"+ ls10 + "\n");
 		
-		Map<Integer, Object[]> ls16 = mayBayService.getCau16();
+		Map<Long, Object[]> ls16 = mayBayService.getCau16();
 		System.out.println("\n Câu 16) Với mỗi loại máy bay có phi công lái cho biết mã số, loại máy báy và tổng số phi công có thể lái loại máy bay đó:");
-		for(Map.Entry<Integer, Object[]> entry : ls16.entrySet()) {
+		for(Map.Entry<Long, Object[]> entry : ls16.entrySet()) {
 			System.out.println("Mã Máy Bay= "+ entry.getKey() +", Loại= "+ entry.getValue()[0] +", Tổng số phi công= "+ entry.getValue()[1] +"");
 		}
 		System.out.println("\n");

@@ -41,12 +41,12 @@ public class MayBayDaoImpl implements MayBayService{
 
 	@Transactional
 	@Override
-	public Map<Integer, Object[]> getCau16() {
+	public Map<Long, Object[]> getCau16() {
 		//Lấy danh sách MaMB có người lái từ ChungNhan
 		List<Object[]> danhSachMayBayCoNguoiLai = chungNhanRepository.getAllMayBayCoNguoiLai();
-		Map<Integer, Object[]> maps = new HashMap<>();
+		Map<Long, Object[]> maps = new HashMap<>();
 				for (Object[] obj : danhSachMayBayCoNguoiLai) {
-					maps.put((Integer) obj[0], new Object[] { obj[1].toString(), (Integer) obj[2] });
+					maps.put(Long.parseLong(String.valueOf(obj[0])), new Object[] { obj[1].toString(), Long.parseLong(String.valueOf(obj[2])) });
 				}
 				
 		//Return: Map các cặp key value

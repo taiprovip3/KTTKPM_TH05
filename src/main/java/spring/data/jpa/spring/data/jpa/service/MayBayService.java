@@ -12,5 +12,5 @@ public interface MayBayService {
 	public int getCountBoeing();
 	
 //	Câu 16 Với mỗi loại máy bay có phi công lái cho biết mã số, loại máy báy và tổng số phi công có thể lái loại máy bay đó.
-	public Map<Integer, Object[]> getCau16();
+	public Map<Long, Object[]> getCau16();
 }
